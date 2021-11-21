@@ -41,7 +41,7 @@ int main(void)
 }
 inline double eq(double x)
 {
-	return pow(x,3) - 48*x;
+	return pow(x,2) + (54/x);
 }
 inline double delta(double a, double b, double n)
 {
