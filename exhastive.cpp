@@ -7,10 +7,13 @@ double delta(double, double, double);
 double accurary(double, double, double);
 int main(void)
 {
+	cout << "Enter values a and b : " ;
 	double l1, l2;
 	double n;
 	static bool c=0;
-	cin >> l1 >> l2 >> n;
+	cin >> l1 >> l2;
+	cout << "Enter the value of n : ";
+	cin >> n;
 	double x1, x2, x3;
 	x1 = l1;
 	n = delta(l1, l2, n);
