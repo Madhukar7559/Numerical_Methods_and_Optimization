@@ -19,6 +19,8 @@ int main(void)
 	n = delta(l1, l2, n);
 	x2 = x1 + n;
 	x3 = x2 + n;
+	cout << endl;
+	cout << setprecision(10) << "(" << x1 << ", " << x3 << ")" << endl;
 	do
 	{
 		if(eq(x1) > eq(x2) && eq(x2) < eq(x3))
@@ -32,19 +34,25 @@ int main(void)
 		{
 			c=1;
 		}
+		cout << setprecision(10) << "(" << x1 << ", " << x3 << ")" << endl;
 	} while(x3 < l2 || x3 == l2);
 	if(c==1)
 	{
-		cout << "There are no minimum points" << endl;
+		cout << endl;
+		cout << "There are no minimum points in the given domain" << endl;
+		cout << endl;
 	}
 	else
 	{
-		cout << setprecision(10) << x1 << "\t" << x3 << endl;
+		cout << endl;
+		cout << "The minimum point should be in between : ";
+		cout << setprecision(10) << "(" << x1 << ", " << x3 << ")" << endl;
+		cout << endl;
 	}
 }
 inline double eq(double x)
 {
-	return pow(x,2) + (54/x);
+	return exp(x)-pow(x,3);
 }
 inline double delta(double a, double b, double n)
 {
