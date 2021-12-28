@@ -8,42 +8,47 @@ double pos(double);
 int main(void)
 {
     double a,b, x1, x2, xm, L, error;
-    cout << "Enter Upper Boundary : ";
-    cin >> a;
-    cout << "Enter Lower Boundary : ";
-    cin >> b;
+    cout << "Enter Lower and Upper Boundary : ";
+    cin >> a >> b;
     cout << "Enter the error : ";
     cin >> error;
     xm = (a+b) / 2;
     L = b-a;
-    x1 = a + (L/4);
-    x2 = b - (L/4);
-    double i = 0;
-    while(i < 10)
+    cout << endl;
+    cout << "(" << a << ", " << b << ")" << endl;
+    do
     {
+        x1 = a + (L/4);
+        x2 = b - (L/4);
         if(eq(x1) < eq(xm))
         {
             b = xm;
             xm = x1;
         }
-        else if(eq(x2) < eq(xm))
-        {
-            a = xm;
-            xm = x2;
-        }
         else
         {
-            a=x1;
-            b=x2;
+            if(eq(x2) < eq(xm))
+            {
+                a = xm;
+                xm = x2;
+            }
+            else
+            {
+                a=x1;
+                b=x2;
+            }
         }
         L = b - a;
-        i++;
-    }
-    cout << a << " " << b << endl;
+        cout << "(" << a << ", " << b << ")" << endl;
+    }while(pos(L) > error);
+    cout << endl;
+    cout << "Minimum Point should be in between : ";
+    cout << "(" << a << ", " << b << ")" << endl;
+    cout << endl;
 }
 inline double eq(double x)
 {
-	return pow(x,2) + (54/x);
+	return (2*(x - 2)*exp(x - 2)) - pow(x + 3, 2);
 }
 inline double pos(double x)
 {
