@@ -6,7 +6,7 @@ double eq(double, double);
 double magnitude(double, double);
 void order(void);
 double x[5][2], delta[2];
-int main(void)
+int main()
 {
     double error = 0.001;
     cout << "Enter initial guess : ";
@@ -23,7 +23,8 @@ int main(void)
 	cout << "Minimum point : " << setprecision(10) << x[0][0] << " " << x[0][1] << endl;
         cout << setprecision(10) << magnitude(delta[0], delta[1]) << endl;
     }
-    cout << "Minimum point : " << setprecision(10) << x[0][0] << "\t" << x[0][1] << endl; 
+    cout << "Minimum point : " << setprecision(10) << x[0][0] << "\t" << x[0][1] << endl;
+    return 0;
 }
 inline double eq(double x, double y)
 {
