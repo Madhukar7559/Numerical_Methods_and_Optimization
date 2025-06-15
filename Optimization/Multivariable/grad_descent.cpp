@@ -14,12 +14,12 @@ int main()
 	cout << "Enter Initial Guess x y : ";
 	cin >> x >> y; // model parameters
 	cout << "alpha time : ";
-	cin >> alpha; //learning rate
+	cin >> alpha; // learning rate
 	cout << endl;
 	int i = 0;
 	double xnew = 0;
 	double ynew = 0;
-	double error = 0.001; //stopping error critera
+	double error = 0.001; // stopping error critera
 	double xprev;
 	double yprev;
 	do
@@ -34,7 +34,7 @@ int main()
 		y = ynew;
 		cout << setprecision(10) << "(" << x << ", " << y << ")" << endl;
 	}
-	while (mod(eq(x,y) - eq(xprev, yprev)) > error) // magnitude of gradient > error is also a stopping condition idk why? but gotta know why?
+	while (mod(eq(x,y) - eq(xprev, yprev)) > error); // magnitude of gradient > error is also a stopping condition idk why? but gotta know why?
 	cout << endl;
 	cout << "Total Iterations : " << i << endl; 
 	cout << setprecision(10) << "Final optimal = (" << x << ", " << y << ")" << endl;
