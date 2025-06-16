@@ -34,7 +34,9 @@ int main()
 		y = ynew;
 		cout << setprecision(10) << "(" << x << ", " << y << ")" << endl;
 	}
-	while (mod(eq(x,y) - eq(xprev, yprev)) > error); // magnitude of gradient > error is also a stopping condition idk why? but gotta know why?
+	// while (mod(eq(x,y) - eq(xprev, yprev)) > error); 
+	// magnitude of gradient > error is also a stopping condition idk why? but gotta know why?
+	while( sqrt(pow(partial_x(x, y), 2) + pow(partial_y(x, y), 2)) > error);
 	cout << endl;
 	cout << "Total Iterations : " << i << endl; 
 	cout << setprecision(10) << "Final optimal = (" << x << ", " << y << ")" << endl;
